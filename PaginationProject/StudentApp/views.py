@@ -16,7 +16,7 @@ def addStudentView(request):
 
 def showStudentView(request):
     student_list = Student.objects.all()
-    paginator = Paginator(student_list,5)
+    paginator = Paginator(student_list,5)    #(object_list, per_page, orphans=0, allow_empty_first_page=True)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     template_name = 'StudentApp/showStudent.html'
